@@ -9,12 +9,35 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello Doctrine ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/php/www/tp3_entity/src/Controller/AgenceController.php'|file_link(0) }}">src/Controller/AgenceController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/php/www/tp3_entity/templates/agence/index.html.twig'|file_link(0) }}">templates/agence/index.html.twig</a></code></li>
-    </ul>
+    
+    {% for cli in agences %}
+        <ul>
+            <li>
+                {{ cli.id }}
+            </li>
+            <li>
+                {{ cli.name() }}
+            </li>
+            <li>
+                {{ cli.getAdress() }}
+            </li>
+        </ul>
+    {% endfor %}
+    
+    {% for cli in villes %}
+        <ul>
+            <li>
+                {{ cli.id }}
+            </li>
+            <li>
+                {{ cli.nom() }}
+            </li>
+            <li>
+                {{ cli.getCodePostal() }}
+            </li>      
+        </ul>
+    {% endfor %}
 </div>
 {% endblock %}
