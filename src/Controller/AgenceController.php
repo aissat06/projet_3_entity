@@ -34,16 +34,29 @@ class AgenceController extends AbstractController
         $agence->setDate(new \DateTime('25-08-2021'));
         $agence->setVille($ville);
 
-        $this->entityManager->persist($ville);
-        $this->entityManager->persist($agence);
-        $this->entityManager->flush();
+        //$this->entityManager->persist($ville);
+        //$this->entityManager->persist($agence);
+        //$this->entityManager->flush();
 
-        $agences = $this->entityManager->getRepository(Agences::class)->findAll();
-        $villes = $this->entityManager->getRepository(Villes::class)->findAll();
+        //$agences = $this->entityManager->getRepository(Agences::class)->findAll();
+        //$villes = $this->entityManager->getRepository(Villes::class)->findAll();
 
         return $this->render('agence/index.html.twig', [
             'villes' => $villes,
             'agences' => $agences,
+        ]);
+    }
+
+    /**
+     * @Route("/agence", name="agence")
+     */
+    public function listAgences(): Response
+    {
+        
+        $agences = $this->entityManager->getRepository(Agences::class)->findAll();
+        
+        return $this->render('agence/index.html.twig', [
+            'agences' => $agences, 
         ]);
     }
 }
