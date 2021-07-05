@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+  
+}
+header {
+    background-color: #353535;
+    width: 100%;
+    height: 50px;
+    color: #ec2525;
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+  li a {
+    display: block;
+    color: rgb(202, 39, 140);
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+footer {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    background-color: #353535;
+    color: #25ec25;
+    font-size: 25px;
+    text-align: center;
+    
+}
