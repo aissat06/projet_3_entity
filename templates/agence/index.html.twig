@@ -11,8 +11,10 @@
 <div class="example-wrapper">
     <h1>Hello Doctrine ✅</h1>
 
-    
-    {% for cli in agences %}
+    {{ agence.name }}
+    {{ agence.adress }}
+    {{ agence.date|date('Y-m-d') }}
+    {#% for cli in agences %}
         <ul>
             <li>
                 {{ cli.id }}
@@ -24,7 +26,7 @@
                 {{ cli.getAdress() }}
             </li>
         </ul>
-    {% endfor %}
+    {% endfor %#}
     
     {#% for cli in villes %}
         <ul>

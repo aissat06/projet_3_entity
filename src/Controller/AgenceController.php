@@ -59,4 +59,18 @@ class AgenceController extends AbstractController
             'agences' => $agences, 
         ]);
     }
+
+    /**
+     * @Route("/agence/{id<\d+>?}", name="agence")
+     */
+    public function showAgences(int $id): Response
+    {
+        //$age = new Agences();
+        //$age->$this->index();
+        $agences = $this->entityManager->getRepository(Agences::class)->findOneBy(['id' => $id]);
+        //$id = $agences->getId();
+        return $this->render('agence/index.html.twig', [
+            'agence' => $agences, 
+        ]);
+    }
 }
