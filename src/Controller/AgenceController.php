@@ -68,9 +68,12 @@ class AgenceController extends AbstractController
         //$age = new Agences();
         //$age->$this->index();
         $agences = $this->entityManager->getRepository(Agences::class)->findOneBy(['id' => $id]);
+        $villes = $this->entityManager->getRepository(Villes::class)->findOneBy(['id' => $id]);
         //$id = $agences->getId();
         return $this->render('agence/index.html.twig', [
             'agence' => $agences, 
+            'ville' => $villes,
+        
         ]);
     }
 }
